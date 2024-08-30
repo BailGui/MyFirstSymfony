@@ -122,7 +122,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 ```
 
-Et
+## Et
 
 ```php
 
@@ -156,6 +156,11 @@ contact:
 my_json:
   path: /json
   controller: App\Controller\FirstController::myJson
+
+```
+
+```php
+
 <?php
 # src/Controller/FirstController.php
 
