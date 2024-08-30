@@ -25,3 +25,9 @@ Pour voir les actions possibles de maker :
 ```bash
 php bin/console make
 ```
+
+### Création d'un Controller
+
+```bash
+php  bin/console make:controller
+```
