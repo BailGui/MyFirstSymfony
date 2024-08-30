@@ -51,3 +51,18 @@ php bin/console debug:router nom_de_la_route
 ### Utilisation de `YAML` comme `routing`
 
 Ceci n'est pas conseillé, mais est parfois utilisé
+
+Voir la documentation :
+
+https://symfony.com/doc/current/routing.html
+
+On commente l'activation par défaut des `attribute` dans
+
+```yaml
+#config/routes.yaml
+#controllers:
+#    resource:
+#        path: ../src/Controller/
+#        namespace: App\Controller
+#    type: attribute
+```

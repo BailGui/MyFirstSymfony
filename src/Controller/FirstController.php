@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class FirstController extends AbstractController
 {
-    #[Route('/json', name: 'app_first')]
+    // attributs devenus inutiles #[Route('/json', name: 'app_first')]
     public function index(): JsonResponse
     {
         return $this->json([
