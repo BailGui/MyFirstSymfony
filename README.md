@@ -47,3 +47,7 @@ Pour voir le détail d'une route
 ```bash
 php bin/console debug:router nom_de_la_route
 ```
+
+### Utilisation de `YAML` comme `routing`
+
+Ceci n'est pas conseillé, mais est parfois utilisé
