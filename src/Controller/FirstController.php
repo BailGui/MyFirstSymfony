@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class FirstController extends AbstractController
 {
     // attributs devenus inutiles #[Route('/json', name: 'app_first')]
-    public function index(): JsonResponse
+    public function myJson(): JsonResponse
     {
         return $this->json([
             'message' => 'Welcome to your new controller!',
