@@ -12,7 +12,8 @@ class FirstController extends AbstractController
     // création de la méthode pour notre page d'accueil
     public function index(): Response
     {
-        return new Response(content:"<html><body><h1>Hello</h1></body></html>");
+        return new Response(content:"<html><body><h1>Homepage</h1>
+        <nav><a href='./'>Accueil</a> | <a href='./json' target='_blank'>json</a></body></html>");
     }
     // attributs devenus inutiles #[Route('/json', name: 'app_first')]
     public function myJson(): JsonResponse

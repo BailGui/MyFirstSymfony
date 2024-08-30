@@ -100,3 +100,10 @@ class FirstController extends AbstractController
 }
 
 ```
+
+### Création d'une méthode et d'une route
+
+```php
+
+
+```
