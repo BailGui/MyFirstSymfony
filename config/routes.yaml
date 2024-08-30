@@ -10,3 +10,7 @@ homepage:
 my_json:
   path: /json
   controller: App\Controller\FirstController::myJson
+
+contact:
+  path: /contact
+  controller: App\Controller\FirstController::form
