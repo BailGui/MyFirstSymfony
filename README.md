@@ -35,3 +35,9 @@ php  bin/console make:controller
 Le nom doit être en Pascal case
 
 Un fichier est créé `src/Controller/FirstController.php`
+
+Pour voir une route depuis la console :
+
+```bash
+php bin/console debug:router
+```
