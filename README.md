@@ -104,6 +104,102 @@ class FirstController extends AbstractController
 ### Création d'une méthode et d'une route
 
 ```php
+La méthode dans FirstController.php
 
+# src/Controller/FirstController.php
+# ...
+// Appel des réponses http en mode text
+use Symfony\Component\HttpFoundation\Response;
+
+# ...
+
+// création de la méthode pour notre page d'accueil
+    public function index(): Response
+    {
+        return new Response("<html><body><h1>Hello</h1></body></html>");
+    }
+# ...
+
+```
+
+Et
+
+```php
+
+# config/routes.yaml
+# ...
+homepage:
+  path: /
+  controller: App\Controller\FirstController::index
+
+```
+
+### Création d'une dernière route
+
+```php
+
+# config/routes.yaml
+#controllers:
+#    resource:
+#        path: ../src/Controller/
+#        namespace: App\Controller
+#    type: attribute
+
+homepage:
+  path: /
+  controller: App\Controller\FirstController::index
+
+contact:
+  path: /contact
+  controller: App\Controller\FirstController::rami
+
+my_json:
+  path: /json
+  controller: App\Controller\FirstController::myJson
+<?php
+# src/Controller/FirstController.php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+// appel des réponses http en mode text
+use Symfony\Component\HttpFoundation\Response;
+# use Symfony\Component\Routing\Attribute\Route;
+
+class FirstController extends AbstractController
+{
+
+    // création de la méthode pour notre page d'accueil
+    public function index(): Response
+    {
+        return new Response
+        ("<html><body><h1>Homepage</h1>
+<nav>
+<a href='./'>Accueil</a> |
+<a href='./contact'>Contact</a> |
+<a href='./json' target='_blank'>json</a>
+</nav></body></html>");
+    }
+
+    public function rami(): Response
+    {
+        return new Response("<html><body><h1>Contact</h1><nav>
+        <a href='./'>Accueil</a> |
+        <a href='./contact'>Contact</a> |
+        <a href='./json' target='_blank'>json</a></nav>
+        </body></html>");
+    }
+
+    // attributs devenus inutiles
+    // #[Route('/json', name: 'my_json')]
+    public function myJson(): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Welcome to your new controller!',
+            'path' => 'src/Controller/FirstController.php',
+        ]);
+    }
+}
 
 ```
